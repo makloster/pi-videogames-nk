@@ -1,0 +1,28 @@
+.card{
+  display: grid;
+  grid-auto-flow: row;
+  justify-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: rgb(255, 255, 255);
+  height: 350px;
+  width: 315px;
+  border-radius: 20px;
+  padding: 20px 20px 0px;
+  margin: auto;
+}
+
+.name{
+  font-size: large;
+  font-weight: bold;
+}
+
+.img{
+  border-radius: 5px;
+  height: 220px;
+  width: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+.img:hover{
+  opacity: 90%;
+}

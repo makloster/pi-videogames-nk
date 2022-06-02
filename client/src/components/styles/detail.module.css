@@ -1,0 +1,122 @@
+/* .background {
+  background-image:
+    grayscale(100%), url('https://i.imgur.com/7gKWfIi.jpg');
+  background-blend-mode: saturation;
+  background-repeat: repeat;
+  background-position-x: center;
+  min-height: 95vh;
+  padding: 1%;
+} */
+
+.backButton {
+  margin: 5px auto;
+  width: auto;
+  padding: 15px;
+  border-radius: 90px;
+  background: #4d0000;
+  color: rgb(255, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.backButton:active {
+  transform: scale(0.90);
+  box-shadow: 7px 5px 56px -10px #ff0000;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: rgb(255, 255, 255);
+  max-width: 50%;
+  border-radius: 20px;
+  padding: 30px 50px;
+  margin: 5px auto;
+}
+
+.img {
+  background-position: center;
+  max-width: 100%;
+  border-radius: 3px;
+  margin: 20px auto;
+}
+
+.description {
+  margin: 20px;
+  font-size: 20px;
+}
+
+.name {
+  margin: 1px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.relPlat {
+  margin: 25px 0px 10px;
+}
+
+.createdGames {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+.modify {
+  grid-column: 1;
+  max-width: 75px;
+  background-color: black;
+  color: lightskyblue;
+  font-weight: 700;
+  opacity: 0.4;
+  cursor: pointer;
+  margin: auto;
+  margin: 5% 5% auto 5%;
+}
+
+.modify:hover {
+  opacity: 1;
+}
+
+.modify:active {
+  transform: scale(0.77);
+  box-shadow: 7px 5px 56px -10px #006eff;
+}
+
+.delete {
+  grid-column: 4;
+  max-width: 75px;
+  background-color: black;
+  color: red;
+  font-weight: 700;
+  opacity: 0.4;
+  cursor: pointer;
+  margin: 5% 5% 5% auto;
+}
+
+.delete:hover {
+  opacity: 1;
+}
+
+.delete:active {
+  transform: scale(0.77);
+  box-shadow: 7px 5px 56px -10px #ff0000;
+}
+
+.loading {
+  border-radius: 90px;
+  align-self: center;
+  margin: 10vh;
+}
+
+.error404 {
+  border-radius: 90px;
+  align-self: center;
+  margin: 5%;
+  max-width: 35vw;
+}

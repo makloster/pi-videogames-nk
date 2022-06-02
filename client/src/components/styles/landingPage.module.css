@@ -1,0 +1,32 @@
+.contents {
+  background-image: url('https://i.imgur.com/7gKWfIi.jpg');
+  background-position-x: center;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  /* height: 100vh; */
+}
+
+.title {
+  font-size: 5rem;
+  color: antiquewhite;
+  margin: 7% 0% 0%;
+  -webkit-text-stroke: 3px black;
+}
+
+.imgContainer {
+  margin: 10% 0% 0%;
+}
+
+.startButton {
+  max-width: 800px;
+  margin: auto;
+  width: 50vw;
+}
+
+.startButton:active {
+  transform: scale(0.95);
+}

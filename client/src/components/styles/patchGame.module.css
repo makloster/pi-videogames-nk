@@ -1,0 +1,111 @@
+.backButton {
+  margin: 20px 0px;
+}
+
+.background {
+  background-image:
+    grayscale(100%), url('https://i.imgur.com/cahdVGg.png');
+  background-blend-mode: saturation;
+  background-repeat: repeat;
+  background-position-x: center;
+  min-height: 95vh;
+  padding: 1%;
+}
+
+.content {
+  max-width: 50%;
+  min-width: 700px;
+  border-radius: 20px;
+  padding: 10px 10px;
+  margin: auto auto 1%;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(255, 251, 0);
+  -webkit-text-stroke: 1px black;
+}
+
+.title {
+  -webkit-text-stroke: 3px black;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.danger {
+  color: red;
+  margin: 10px;
+  font-size: 25px;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.label {
+  margin: 3px;
+}
+
+.description {
+  height: 140px;
+  /* white-space: normal;   // TODO ¿cómo hacer que tome el estilo de caja normal? */
+}
+
+.select {
+  max-height: 42px;
+  font-size: 25px;
+  margin-left: 10px;
+}
+
+.columns {
+  display: flex;
+  flex-direction: column;
+}
+
+.rows {
+  margin: 3px 5px;
+  display: flex;
+  white-space: nowrap;
+}
+.rows input {
+  width: stretch;
+  margin-left: 10px;
+}
+.rows input::placeholder{
+  font-size: 20px;
+  color: rgb(201, 201, 201);
+}
+
+.platGenres {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  grid-template-rows: 1fr;
+  align-content: center;
+  gap: 50px 30px;
+}
+
+.element {
+  font-size: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  max-width: 180px;
+  height: 0px;
+  margin: 10px;
+}
+
+.element button {
+  margin-left: 10px;
+}
+
+.submit {
+  margin: 10px 0px;
+  align-self: center;
+}

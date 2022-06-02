@@ -1,0 +1,61 @@
+.container {
+  background-image:
+    linear-gradient(black, black), url('https://i.imgur.com/7gKWfIi.jpg');
+  background-blend-mode: saturation;
+  background-repeat: repeat;
+  background-position-x: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.title {
+  font-size: 50px;
+  color: antiquewhite;
+  -webkit-text-stroke: 3px black;
+  margin: 1% auto 0;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin: 0% 1vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.createButton {
+  max-width: 112px;
+  padding: 15px;
+  border-radius: 90px;
+  margin: auto;
+  background: #760101;
+  color: rgb(255, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.createButton:active {
+ transform: scale(0.90);
+ box-shadow: 7px 5px 56px -10px #ff0000;
+}
+
+.contents {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1%;
+}
+
+.loading {
+  border-radius: 90px;
+  margin-top: 25vh;
+  margin-bottom: 35vh;
+}
