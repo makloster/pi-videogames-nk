@@ -61,5 +61,3 @@
  transform: scale(0.90);
  box-shadow: 7px 5px 56px -10px #ff0000;
 }
-
-/* {({ isActive }) => (isActive ? "link-active" : "link")} */

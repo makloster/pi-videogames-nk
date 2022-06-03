@@ -21,8 +21,10 @@
   height: 220px;
   width: 300px;
   object-fit: cover;
-  object-position: center;
+  object-position: center;  
+  transition: 0.1s;
 }
-.img:hover{
-  opacity: 90%;
+.img:active {
+  transform: scale(0.95);
+  box-shadow: 7px 5px 56px -10px #ffffff;
 }
