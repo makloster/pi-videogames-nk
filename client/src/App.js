@@ -1,7 +1,7 @@
 import './App.css'
 import { Navigate, Route, Routes } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
-import { getAllGenres, getAllVideogames } from './store/actions'
+import { getAllGenres, getAllGames } from './store/actions'
 import { useEffect } from 'react'
 import LandingPage from './components/landingPage.jsx'
 import Home from './components/home.jsx'
@@ -14,7 +14,7 @@ function App() {
   const stateGames = useSelector(state => state.allGames)
 
   useEffect(() => {
-    dispatch(getAllVideogames())
+    dispatch(getAllGames())
     dispatch(getAllGenres())
   }, [dispatch, stateGames])
 

@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router'
 import { Link } from 'react-router-dom'
-import { clearStateDetail, clearStateNavigation, deleteVideogame, getAllVideogames, getVGByID } from '../store/actions'
+import { clearStateDetail, clearStateNavigation, deleteVideogame, getAllGames, getVGByID } from '../store/actions'
 import Loader from './loader'
 import NotFound from './notFound'
 import s from './styles/detail.module.css'
@@ -26,7 +26,7 @@ export default function Detail() {
     const res = dispatch(deleteVideogame(id))
     if (res.error_msg) alert(`${game.name} could not be deleted!`)
     else {
-      dispatch(getAllVideogames())
+      dispatch(getAllGames())
       alert(`${game.name} was deleted successfully!`)
       navigate('/home')
     }

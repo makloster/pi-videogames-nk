@@ -6,8 +6,7 @@ import Pagination from './sorters/pagination'
 import SearchBar from './filters/searchBar'
 import FilterGenre from './filters/filterGenre'
 import FilterSource from './filters/filterSource'
-import SorterName from './sorters/sorterName'
-import SorterRating from './sorters/sorterRating'
+import Sorter from './sorters/sorter'
 import Loader from './loader'
 import NotFound from './notFound'
 import s from './styles/home.module.css'
@@ -34,8 +33,7 @@ export default function Home() {
         <FilterGenre className={s.order} setCurrentPage={setCurrentPage} />
         <FilterSource className={s.order} setCurrentPage={setCurrentPage} />
         <div id='navBarB' className={s.navBar}>
-          <SorterName className={s.order} setCurrentPage={setCurrentPage} />
-          <SorterRating className={s.order} setCurrentPage={setCurrentPage} />
+          <Sorter className={s.order} setCurrentPage={setCurrentPage} />
           <Link to='/create'><button className={s.createButton}>CREATE GAME</button></Link>
         </div>
 

@@ -1,11 +1,10 @@
 import {
-  GET_ALL_VIDEOGAMES,
+  GET_ALL_GAMES,
   GET_GAME_BY_ID,
   GET_GAMES_BY_QUERY,
   FILTER_BY_GENRE,
   FILTER_BY_SOURCE,
-  SORT_BY_NAME,
-  SORT_BY_RATING,
+  SORT_BY,
   GET_GENRES,
   CLEAR_STATE_NAVIGATION,
   CLEAR_STATE_DETAIL,
@@ -15,12 +14,12 @@ import {
 } from '../consts'
 import { get, post, delete as del, put } from 'axios'
 
-export function getAllVideogames() {
+export function getAllGames() {
   return (dispatch) => {
     get(`/api/videogames`)
       .then(videogames => {
         dispatch({
-          type: GET_ALL_VIDEOGAMES,
+          type: GET_ALL_GAMES,
           payload: videogames.data
         })
       })
@@ -141,16 +140,9 @@ export function filterBySource(payload) {
   }
 }
 
-export function sortByName(payload) {
+export function sortBy(payload) {
   return {
-    type: SORT_BY_NAME,
-    payload
-  }
-}
-
-export function sortByRating(payload) {
-  return {
-    type: SORT_BY_RATING,
+    type: SORT_BY,
     payload
   }
 }

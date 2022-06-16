@@ -1,4 +1,4 @@
-import { GET_GAME_BY_ID, GET_GAMES_BY_QUERY, GET_ALL_VIDEOGAMES, GET_GENRES, SORT_BY_NAME, SORT_BY_RATING, ASCENDENT, FILTER_BY_GENRE, FILTER_BY_SOURCE, CLEAR_STATE_DETAIL, CLEAR_STATE_NAVIGATION, REDIRECT } from '../consts'
+import { GET_GAME_BY_ID, GET_GAMES_BY_QUERY, GET_ALL_GAMES, GET_GENRES, SORT_BY, FILTER_BY_GENRE, FILTER_BY_SOURCE, CLEAR_STATE_DETAIL, CLEAR_STATE_NAVIGATION, REDIRECT, NAME_ASC, NAME_DESC, RATING_ASC, RATING_DESC } from '../consts'
 
 const initialState = {
    allGames: [],
@@ -12,7 +12,7 @@ const initialState = {
 export default function reducer(state = initialState, action) {
    switch (action.type) {
 
-      case GET_ALL_VIDEOGAMES:
+      case GET_ALL_GAMES:
          if (action.payload.length !== state.allGames.length) {
             return {
                ...state,
@@ -47,25 +47,32 @@ export default function reducer(state = initialState, action) {
             genres: genresPayload
          }
 
-      case SORT_BY_NAME:
-         let nameSorting = [...state.filteredGames]
-         action.payload === ASCENDENT
-            ? nameSorting.sort((a, b) => a.name.localeCompare(b.name))
-            : nameSorting.sort((a, b) => b.name.localeCompare(a.name))
-         return {
-            ...state,
-            filteredGames: nameSorting
-         }
+      case SORT_BY:
+         let nameSorted = [...state.filteredGames]
 
-      case SORT_BY_RATING:
-         let ratingSort = [...state.filteredGames]
-         ratingSort.sort((a, b) => {
-            if (a.rating !== b.rating) return action.payload === ASCENDENT ? a.rating - b.rating : b.rating - a.rating
-            else return action.payload === ASCENDENT ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name)
-         })
+         if (action.payload === NAME_ASC) {
+            nameSorted.sort((a, b) => a.name.localeCompare(b.name))
+         }
+         if (action.payload === NAME_DESC) {
+            nameSorted.sort((a, b) => b.name.localeCompare(a.name))
+         }
+         if (action.payload === RATING_ASC) {
+            nameSorted.sort((a, b) =>
+               a.rating !== b.rating
+                  ? a.rating - b.rating
+                  : a.name.localeCompare(b.name)
+            )
+         }
+         if (action.payload === RATING_DESC) {
+            nameSorted.sort((a, b) =>
+               a.rating !== b.rating
+                  ? b.rating - a.rating
+                  : b.name.localeCompare(a.name)
+            )
+         }
          return {
             ...state,
-            filteredGames: ratingSort
+            filteredGames: nameSorted
          }
 
       case FILTER_BY_GENRE:

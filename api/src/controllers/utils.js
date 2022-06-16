@@ -105,7 +105,7 @@ const checkDB = async () => { // TODO agregar una const para que no vuelva a che
 //   })
 // }
 
-// const sortByName = (vgs) => {
+// const sortBy = (vgs) => {
 //   vgs.sort((a, b) => a.name.localeCompare(b.name))
 // }
 

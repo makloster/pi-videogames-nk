@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { getAllVideogames, putVideogame } from '../store/actions'
+import { getAllGames, putVideogame } from '../store/actions'
 import s from './styles/patchGame.module.css'
 
 export default function Put() {
@@ -157,7 +157,7 @@ export default function Put() {
   function handleSubmit(e) {
     e.preventDefault()
     dispatch(putVideogame(input))
-    dispatch(getAllVideogames())
+    dispatch(getAllGames())
     alert('Videogame modified successfully!')
     setInput({
       name: '',

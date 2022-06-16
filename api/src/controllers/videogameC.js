@@ -4,7 +4,7 @@ const { Genre, Videogame, Videogame_Genre } = require('../db')
 const { apiInfoAll, dbInfoAll, apiGameByID, checkDB } = require('./utils')
 const { API_KEY } = process.env
 
-const getAllVideogames = async (req, res, next) => {
+const getAllGames = async (req, res, next) => {
   try {
     let getResponse
 
@@ -123,7 +123,7 @@ const postVG = async (req, res, next) => {
   try {
     const { name, description, image, released, rating, platforms, genres } = req.body
     if (!await Videogame.findOne({ where: { name } })) {
-      const VG = await Videogame.create({ // ? no funca con findOrCreate
+      const VG = await Videogame.create({
         name,
         description,
         image,
@@ -137,8 +137,8 @@ const postVG = async (req, res, next) => {
       })
       VG.addGenre(dbGenres)
       res.status(201).json({
-        msg: `Game created!`,
-        game: VG,
+        success_message: `Game created!`,
+        newGame: VG,
         associated_genres: dbGenres
       })
     } else {
@@ -153,7 +153,7 @@ const putGame = async (req, res, next) => {
   try {
     const { id } = req.params
     const { name, description, image, released, rating, platforms, genres } = req.body
-    const VG = await Videogame.findOne({ where: { id: id } })
+    const VG = await Videogame.findOne({ where: { id } })
     await VG.update(
       {
         name: name ? name : VG.name,
@@ -163,7 +163,7 @@ const putGame = async (req, res, next) => {
         rating: rating ? rating : VG.rating,
         platforms: platforms ? platforms : VG.platforms
       },
-      { where: { id: id } }
+      { where: { id } }
     )
 
     if (genres) {
@@ -190,7 +190,7 @@ const deleteVG = async (req, res, next) => {
   try {
     const { id } = req.params
     await Videogame.destroy({
-      where: { id: id }
+      where: { id }
     })
     res.json({ success_message: 'Game deleted!' })
   } catch (error) {
@@ -198,4 +198,4 @@ const deleteVG = async (req, res, next) => {
   }
 }
 
-module.exports = { getAllVideogames, getByID, postVG, putGame, deleteVG }
+module.exports = { getAllGames, getByID, postVG, putGame, deleteVG }

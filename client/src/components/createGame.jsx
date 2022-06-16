@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import { getAllVideogames, postVG } from '../store/actions'
+import { getAllGames, postVG } from '../store/actions'
 import s from './styles/createGame.module.css'
 
 export default function Create() {
@@ -158,7 +158,7 @@ export default function Create() {
   function handleSubmit(e) {
     e.preventDefault()
     dispatch(postVG(input))
-    dispatch(getAllVideogames())
+    dispatch(getAllGames())
     alert('Videogame created successfully!')
     setInput({
       name: '',
