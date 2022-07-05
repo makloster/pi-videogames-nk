@@ -30,3 +30,7 @@ GET https://api.rawg.io/api/games, GET https://api.rawg.io/api/games?search={gam
 - Para las funcionalidades de filtrado y ordenamiento NO pueden utilizarse los endpoints de la API externa, deben realizarse con las herramientas ya disponibles.
 - Alguno de los ordenamientos o filtrados debe si o si realizarse desde el frontend.
 - No se deberá utilizar librerías externas para aplicar estilos a la app (solo CSS puro, CSS Modules o Styled Components).
+
+# URL para ver el proyecto (deployment)
+
+https://pi-videogames-nk.vercel.app/
