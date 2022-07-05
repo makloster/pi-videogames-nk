@@ -21,7 +21,7 @@ La idea general es crear una aplicación en un máximo de dos semanas y media en
   - Modificar los juegos creados.
   - Borrarlos de la DB.
 
-# Condiciones
+## Condiciones
 
 El proceso de trabajo cuenta con las siguientes salvedades sobre manejo de la información, a saber:
 
